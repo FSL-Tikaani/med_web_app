@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCalc - Медицинские калькуляторы</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Липкий заголовок -->
+<header id="header">
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>MedCalc</span>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active">Главная</a></li>
+                <li><a href="#calculators" class="nav-link">Калькуляторы</a></li>
+                <li><a href="#about" class="nav-link">О проекте</a></li>
+                <li><a href="#team" class="nav-link">Команда</a></li>
+                <li><a href="#contact" class="nav-link">Обратная связь</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Основное содержимое -->
+<main id="main">
+    <!-- Главная страница -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="container">
+                <h1>Онлайн медицинские калькуляторы</h1>
+                <p class="subtitle">Быстрые и простые расчёты показателей здоровья для учебного и ознакомительного использования</p>
+                <a href="#calculators" class="btn btn-primary">Перейти к калькуляторам</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Доступные калькуляторы</h2>
+            <div class="calculator-cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-weight-scale"></i>
+                    </div>
+                    <h3>Индекс массы тела (ИМТ)</h3>
+                    <p>Рассчитайте индекс массы тела и определите свою весовую категорию</p>
+                    <a href="#calculators" class="btn btn-outline" data-calc="bmi">Рассчитать</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Общее состояние организма</h3>
+                    <p>Оценка основных показателей здоровья на основе простых параметров</p>
+                    <a href="#calculators" class="btn btn-outline" data-calc="health">Рассчитать</a>
+                </div>
+            </div>
+
+            <div class="warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Результаты носят справочный характер и не являются медицинским диагнозом</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница калькуляторов -->
+    <section id="calculators" class="page">
+        <div class="container">
+            <h1 class="page-title">Медицинские калькуляторы</h1>
+            <p class="page-subtitle">Выберите калькулятор для расчёта</p>
+
+            <div class="calculators-list">
+                <div class="calc-item" data-calc="bmi">
+                    <div class="calc-item-header">
+                        <i class="fas fa-weight-scale"></i>
+                        <h3>Индекс массы тела (ИМТ)</h3>
+                    </div>
+                    <p>Рассчитайте индекс массы тела на основе роста и веса</p>
+                    <button class="btn btn-primary calc-select-btn">Открыть калькулятор</button>
+                </div>
+                <div class="calc-item" data-calc="health">
+                    <div class="calc-item-header">
+                        <i class="fas fa-heart-pulse"></i>
+                        <h3>Общая оценка здоровья</h3>
+                    </div>
+                    <p>Оценка основных показателей здоровья</p>
+                    <button class="btn btn-primary calc-select-btn">Открыть калькулятор</button>
+                </div>
+            </div>
+
+            <!-- Калькулятор ИМТ -->
+            <div id="bmi-calculator" class="calculator-container">
+                <h2>Калькулятор индекса массы тела (ИМТ)</h2>
+                <div class="calculator">
+                    <div class="input-group">
+                        <label for="height">Рост (см):</label>
+                        <input type="number" id="height" min="50" max="250" value="170">
+                        <div class="input-range">
+                            <input type="range" id="height-range" min="50" max="250" value="170">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="weight">Вес (кг):</label>
+                        <input type="number" id="weight" min="20" max="300" value="70">
+                        <div class="input-range">
+                            <input type="range" id="weight-range" min="20" max="300" value="70">
+                        </div>
+                    </div>
+                    <button id="calculate-bmi" class="btn btn-primary">Рассчитать</button>
+                </div>
+                <div id="bmi-result" class="result">
+                    <h3>Результат:</h3>
+                    <div class="result-content">
+                        <div class="result-value">
+                            <span id="bmi-value">-</span>
+                            <span class="result-label">ИМТ</span>
+                        </div>
+                        <div class="result-category">
+                            <span id="bmi-category">Введите данные</span>
+                            <div id="bmi-indicator" class="indicator"></div>
+                        </div>
+                    </div>
+                    <div class="bmi-scale">
+                        <div class="scale-item underweight">Дефицит (<18.5)</div>
+                        <div class="scale-item normal">Норма (18.5-24.9)</div>
+                        <div class="scale-item overweight">Избыток (25-29.9)</div>
+                        <div class="scale-item obese">Ожирение (≥30)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Калькулятор общей оценки здоровья -->
+            <div id="health-calculator" class="calculator-container">
+                <h2>Калькулятор общей оценки здоровья</h2>
+                <div class="calculator">
+                    <div class="input-group">
+                        <label for="age">Возраст (лет):</label>
+                        <input type="number" id="age" min="1" max="120" value="30">
+                    </div>
+                    <div class="input-group">
+                        <label for="pressure-systolic">Давление (систолическое):</label>
+                        <input type="number" id="pressure-systolic" min="60" max="250" value="120">
+                    </div>
+                    <div class="input-group">
+                        <label for="pressure-diastolic">Давление (диастолическое):</label>
+                        <input type="number" id="pressure-diastolic" min="40" max="150" value="80">
+                    </div>
+                    <div class="input-group">
+                        <label for="cholesterol">Холестерин (ммоль/л):</label>
+                        <input type="number" id="cholesterol" min="2" max="10" step="0.1" value="5.0">
+                    </div>
+                    <div class="input-group">
+                        <label for="glucose">Глюкоза (ммоль/л):</label>
+                        <input type="number" id="glucose" min="2" max="20" step="0.1" value="5.5">
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <input type="checkbox" id="smoking"> Курение
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <input type="checkbox" id="active"> Активный образ жизни
+                        </label>
+                    </div>
+                    <button id="calculate-health" class="btn btn-primary">Рассчитать</button>
+                </div>
+                <div id="health-result" class="result">
+                    <h3>Результат:</h3>
+                    <div class="result-content">
+                        <div class="result-value">
+                            <span id="health-value">-</span>
+                            <span class="result-label">Оценка здоровья</span>
+                        </div>
+                        <div class="result-category">
+                            <span id="health-category">Введите данные</span>
+                            <div id="health-indicator" class="indicator"></div>
+                        </div>
+                    </div>
+                    <div class="recommendations">
+                        <h4>Рекомендации:</h4>
+                        <p id="health-recommendations">Заполните форму для получения рекомендаций</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница "О проекте" -->
+    <section id="about" class="page">
+        <div class="container">
+            <h1 class="page-title">О проекте</h1>
+            <div class="about-content">
+                <div class="about-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <p>Этот сайт является учебным проектом, созданным для демонстрации работы медицинских калькуляторов на фронтенде.</p>
+                <p>Проект разработан с использованием чистых технологий HTML, CSS и JavaScript без использования серверной части, фреймворков или библиотек.</p>
+                <p>Все расчёты выполняются непосредственно в браузере и сохраняются локально. Результаты носят исключительно справочный характер и не могут использоваться для постановки диагноза или замены консультации с медицинским специалистом.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Учебный проект</h3>
+                        <p>Цель проекта - продемонстрировать навыки frontend-разработки</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Функциональные калькуляторы</h3>
+                        <p>Реализованы рабочие медицинские калькуляторы с точными формулами</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Адаптивный дизайн</h3>
+                        <p>Сайт корректно отображается на всех устройствах</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница "Команда" -->
+    <section id="team" class="page">
+        <div class="container">
+            <h1 class="page-title">Наша команда</h1>
+            <p class="page-subtitle">Разработчики проекта MedCalc</p>
+            <div class="team-members">
+                <div class="member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Ваше Имя</h3>
+                    <p class="member-role">Frontend Developer</p>
+                    <p class="member-desc">Разработка сайта, реализация калькуляторов, дизайн интерфейса</p>
+                    <div class="member-skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Страница "Обратная связь" -->
+    <section id="contact" class="page">
+        <div class="container">
+            <h1 class="page-title">Обратная связь</h1>
+            <p class="page-subtitle">Свяжитесь с нами для вопросов и предложений</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email для связи:</h3>
+                            <p>example@mail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <h3>Примечание:</h3>
+                            <p>Это учебный проект без серверной части. Форма ниже сохраняет данные локально в вашем браузере.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Отправить сообщение (сохраняется локально)</h3>
+                    <form id="feedback-form">
+                        <div class="form-group">
+                            <label for="name">Имя:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение:</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                    <div id="form-result" class="form-result"></div>
+                    <div class="saved-messages">
+                        <h4>Сохранённые сообщения:</h4>
+                        <div id="saved-messages-list"></div>
+                        <button id="clear-messages" class="btn btn-outline">Очистить все</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Подвал -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>MedCalc</span>
+                </div>
+                <p>Учебный проект медицинских калькуляторов</p>
+            </div>
+            <div class="footer-section">
+                <h3>Быстрые ссылки</h3>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#calculators">Калькуляторы</a></li>
+                    <li><a href="#about">О проекте</a></li>
+                    <li><a href="#team">Команда</a></li>
+                    <li><a href="#contact">Обратная связь</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Калькуляторы</h3>
+                <ul>
+                    <li><a href="#calculators" data-calc="bmi">Индекс массы тела</a></li>
+                    <li><a href="#calculators" data-calc="health">Оценка здоровья</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 MedCalc. Учебный проект. Результаты расчетов носят справочный характер.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
