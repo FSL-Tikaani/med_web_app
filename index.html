@@ -64,10 +64,16 @@
                 </div>
             </div>
 
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="#calculators" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                    <i class="fas fa-calculator"></i> Больше калькуляторов
+                </a>
+            </div>
+
             <div class="warning">
                 <i class="fas fa-exclamation-triangle"></i>
                 <p>Результаты носят справочный характер и не являются медицинским диагнозом</p>
-            </div>
+                </div>
         </div>
     </section>
 
@@ -77,6 +83,8 @@
             <h1 class="page-title">Медицинские калькуляторы</h1>
             <p class="page-subtitle">Выберите калькулятор для расчёта</p>
 
+            <!-- Встроенные калькуляторы -->
+            <h2 style="margin: 50px 0 30px; color: var(--primary-dark);">Наши калькуляторы</h2>
             <div class="calculators-list">
                 <div class="calc-item" data-calc="bmi">
                     <div class="calc-item-header">
@@ -94,6 +102,92 @@
                     <p>Оценка основных показателей здоровья</p>
                     <button class="btn btn-primary calc-select-btn">Открыть калькулятор</button>
                 </div>
+            </div>
+
+            <!-- Дополнительные калькуляторы (внешние ссылки) -->
+            <h2 style="margin: 70px 0 30px; color: var(--primary-dark);">Дополнительные калькуляторы</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: var(--text-light);">
+                Эти калькуляторы находятся на внешних сайтах и открываются в новой вкладке
+            </p>
+
+            <div class="calculator-cards">
+                <!-- Физическое здоровье -->
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Физическое состояние</h3>
+                    <p>Оценка общего физического состояния организма</p>
+                    <a href="https://www.calc.ru/kalkulyator-fizicheskogo-sostoyaniya.html" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Пройти тест</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Физическая нагрузка</h3>
+                    <p>Расчёт уровня физической нагрузки по возрастным группам</p>
+                    <a href="https://www.sas.com.ru/wp/ru/raschet-urovnja-fizicheskoj-nagruzki-po-vozrastnym-gruppam/" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Рассчитать</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Формула Миффлина-Сан Жеора</h3>
+                    <p>Расчёт суточной нормы калорий по современной формуле</p>
+                    <a href="https://www.rlsnet.ru/med-calculators/gastroenterologiya-i-gepatologiya/formula-mifflina-san-zeora-52" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Рассчитать</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Потребление воды</h3>
+                    <p>Калькулятор суточного потребления воды</p>
+                    <a href="https://speedreadpro.ru/water" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Рассчитать</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-smoking"></i>
+                    </div>
+                    <h3>Индекс курения</h3>
+                    <p>Расчёт индекса курения и оценка рисков</p>
+                    <a href="https://medsoftpro.ru/kalkulyatory/smoking-index.html" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Рассчитать</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-weight-scale"></i>
+                    </div>
+                    <h3>Идеальный вес (Брока)</h3>
+                    <p>Расчёт идеального веса по формуле Брока</p>
+                    <a href="https://smartcalculator.online/ideal-weight-according-to-broca-s-formula" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Рассчитать</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-glass-water"></i>
+                    </div>
+                    <h3>Гидратация организма</h3>
+                    <p>Тест на степень гидратации организма</p>
+                    <a href="https://toolfox.ru/tools/hydration-test" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Пройти тест</a>
+                </div>
+
+                <div class="card external-calc">
+                    <div class="card-icon">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3>Дефицит витаминов</h3>
+                    <p>Тесты на дефицит витаминов D, K, магния, B1, B2, A</p>
+                    <a href="https://ershovlabexpert.ru/test/kalkulatory_zdorovia" target="_blank" class="btn btn-primary" style="margin-top: 15px;">Пройти тесты</a>
+                </div>
+            </div>
+
+            <div class="warning" style="margin: 40px 0;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>Внимание:</strong> Эти калькуляторы находятся на сторонних сайтах. Мы не несём ответственности за их содержание и точность результатов. Рекомендуется консультироваться с врачом для точной диагностики.</p>
             </div>
 
             <!-- Калькулятор ИМТ -->
@@ -197,29 +291,61 @@
     <!-- Страница "О проекте" -->
     <section id="about" class="page">
         <div class="container">
-            <h1 class="page-title">О проекте</h1>
+            <h1 class="page-title">О проекте «Калькулятор здоровья»</h1>
             <div class="about-content">
                 <div class="about-icon">
-                    <i class="fas fa-graduation-cap"></i>
+                    <i class="fas fa-heartbeat"></i>
                 </div>
-                <p>Этот сайт является учебным проектом, созданным для демонстрации работы медицинских калькуляторов на фронтенде.</p>
-                <p>Проект разработан с использованием чистых технологий HTML, CSS и JavaScript без использования серверной части, фреймворков или библиотек.</p>
-                <p>Все расчёты выполняются непосредственно в браузере и сохраняются локально. Результаты носят исключительно справочный характер и не могут использоваться для постановки диагноза или замены консультации с медицинским специалистом.</p>
+                <p>Проект «Калькулятор здоровья» — это инновационный веб-сайт, созданный для оценки ключевых показателей здоровья и формирования персонализированных рекомендаций на основе научно обоснованных алгоритмов.</p>
+
+                <p>В современном мире, где растёт осознание важности профилактики заболеваний, наш проект предлагает удобный и доступный инструмент для самоконтроля и экспресс-оценки физического состояния.</p>
+
                 <div class="features">
                     <div class="feature">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Учебный проект</h3>
-                        <p>Цель проекта - продемонстрировать навыки frontend-разработки</p>
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Профилактика заболеваний</h3>
+                        <p>Расчёт рисков развития заболеваний (инфаркт, инсульт) и помощь в их предотвращении</p>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-calculator"></i>
-                        <h3>Функциональные калькуляторы</h3>
-                        <p>Реализованы рабочие медицинские калькуляторы с точными формулами</p>
+                        <i class="fas fa-bolt"></i>
+                        <h3>Экспресс-оценка состояния</h3>
+                        <p>Быстрая оценка физического состояния на основе измерения физиологических параметров</p>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Адаптивный дизайн</h3>
-                        <p>Сайт корректно отображается на всех устройствах</p>
+                        <i class="fas fa-user-md"></i>
+                        <h3>Помощь в самоконтроле</h3>
+                        <p>Инструмент для людей, которые хотят следить за здоровьем и принимать осознанные решения</p>
+                    </div>
+                </div>
+
+                <div class="features" style="margin-top: 30px;">
+                    <div class="feature">
+                        <i class="fas fa-weight"></i>
+                        <h3>Расчёт ИМТ</h3>
+                        <p>Определение индекса массы тела и выявление отклонений от нормы</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-fire"></i>
+                        <h3>Норма калорий</h3>
+                        <p>Расчёт суточной нормы калорий с учётом активности и целей (похудение/поддержание/набор)</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>Оценка сердечно-сосудистых рисков</h3>
+                        <p>Анализ факторов риска с учётом образа жизни, привычек и демографических данных</p>
+                    </div>
+                </div>
+
+                <div class="contact-note" style="margin-top: 50px;">
+                    <div class="note-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="note-content">
+                        <h3>Для кого предназначен проект?</h3>
+                        <p>• Люди, ведущие здоровый образ жизни</p>
+                        <p>• Те, кто только начинает заботиться о своём здоровье</p>
+                        <p>• Пациенты с хроническими заболеваниями (как инструмент самоконтроля)</p>
+                        <p>• Профессиональные спортсмены и спортсмены-любители</p>
                     </div>
                 </div>
             </div>
@@ -230,19 +356,105 @@
     <section id="team" class="page">
         <div class="container">
             <h1 class="page-title">Наша команда</h1>
-            <p class="page-subtitle">Разработчики проекта MedCalc</p>
-            <div class="team-members">
-                <div class="member">
-                    <div class="member-avatar">
-                        <i class="fas fa-user"></i>
+            <p class="page-subtitle">Креативные умы, стоящие за проектом MedCalc</p>
+
+            <!-- Общая фотография команды -->
+            <div class="team-photo-container">
+                <div class="team-photo">
+                    <img src="team_photo.jpg" alt="Наша команда">
+                </div>
+            </div>
+
+            <!-- Описание команды -->
+            <div class="team-description">
+                <p>Наша команда состоит из талантливых специалистов, объединенных общей целью — создавать полезные и понятные медицинские инструменты для учебных целей. Каждый из нас вносит свой уникальный вклад в разработку проекта.</p>
+            </div>
+
+            <!-- Члены команды -->
+            <div class="team-members-grid">
+                <div class="team-member-card">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="member-name">
+                            <h4>Усова Анастасия Александровна</h4>
+                        </div>
                     </div>
-                    <h3>Ваше Имя</h3>
-                    <p class="member-role">Frontend Developer</p>
-                    <p class="member-desc">Разработка сайта, реализация калькуляторов, дизайн интерфейса</p>
-                    <div class="member-skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                    <div class="member-responsibilities">
+                        <h4>Основные задачи:</h4>
+                        <ul>
+                            <li>Изучение теоретического материала</li>
+                            <li>Поиск информации по теме проекта</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="member-name">
+                            <h4>Храмова Кристина Дмитриевна</h4>
+                        </div>
+                    </div>
+                    <div class="member-responsibilities">
+                        <h4>Основные задачи:</h4>
+                        <ul>
+                            <li>Создание сайта</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="member-name">
+                            <h4>Орлова Полина Алексеевна</h4>
+                        </div>
+                    </div>
+                    <div class="member-responsibilities">
+                        <h4>Основные задачи:</h4>
+                        <ul>
+                            <li>Обеспечение тематики и дизайна сайта</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="member-name">
+                            <h4>Щенникова Ксения Алексеевна</h4>
+                        </div>
+                    </div>
+                    <div class="member-responsibilities">
+                        <h4>Основные задачи:</h4>
+                        <ul>
+                            <li>Обеспечение сайта должным информационным наполнением</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <div class="member-header">
+                        <div class="member-avatar">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="member-name">
+                            <h4>Мельникова Полина Евгеньевна</h4>
+                        </div>
+                    </div>
+                    <div class="member-responsibilities">
+                        <h4>Основные задачи:</h4>
+                        <ul>
+                            <li>Публикация сайта</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -253,48 +465,71 @@
     <section id="contact" class="page">
         <div class="container">
             <h1 class="page-title">Обратная связь</h1>
-            <p class="page-subtitle">Свяжитесь с нами для вопросов и предложений</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email для связи:</h3>
-                            <p>example@mail.com</p>
+            <p class="page-subtitle">Свяжитесь с нами любым удобным для вас способом</p>
+
+            <!-- Контакты команды -->
+            <div class="contact-team-grid">
+                <div class="contact-card">
+                    <div class="contact-person">
+                        <div class="contact-avatar">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="contact-person-info">
+                            <h3>Кристина Храмова</h3>
+                            <p class="contact-role">Web-разработчик</p>
+                            <p class="contact-bio">Отвечает за техническую реализацию проекта, работу калькуляторов и функциональность сайта.</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-info-circle"></i>
-                        <div>
-                            <h3>Примечание:</h3>
-                            <p>Это учебный проект без серверной части. Форма ниже сохраняет данные локально в вашем браузере.</p>
+
+                    <div class="contact-methods">
+                        <h4>Способы связи:</h4>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <p class="method-name">Email</p>
+                                <a href="mailto:hramovakristina276@gmail.com" class="method-link">hramovakristina276@gmail.com</a>
+                                <button class="btn-copy" data-clipboard-text="hramovakristina276@gmail.com">
+                                    <i class="far fa-copy"></i> Скопировать
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-vk"></i>
+                            </div>
+                            <div class="method-info">
+                                <p class="method-name">ВКонтакте</p>
+                                <a href="https://vk.com/medcalc_alex" target="_blank" class="method-link">vk.com/medcalc_alex</a>
+                                <button class="btn-open" onclick="window.open('https://vk.com/medcalc_alex', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i> Перейти
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <img src="tg_icon.png" alt="Telegram" style="width: 50px; height: 50px;"/>
+                            </div>
+                            <div class="method-info">
+                                <p class="method-name">Telegram</p>
+                                <a href="https://t.me/kr_stss" target="_blank" class="method-link">@kr_stss</a>
+                                <button class="btn-open" onclick="window.open('https://t.me/kr_stss', '_blank')">
+                                    <i class="fas fa-external-link-alt"></i> Написать
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Отправить сообщение (сохраняется локально)</h3>
-                    <form id="feedback-form">
-                        <div class="form-group">
-                            <label for="name">Имя:</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Сообщение:</label>
-                            <textarea id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                    </form>
-                    <div id="form-result" class="form-result"></div>
-                    <div class="saved-messages">
-                        <h4>Сохранённые сообщения:</h4>
-                        <div id="saved-messages-list"></div>
-                        <button id="clear-messages" class="btn btn-outline">Очистить все</button>
-                    </div>
-                </div>
+            </div>
+
+            <!-- Всплывающее уведомление о копировании -->
+            <div id="copy-notification" class="copy-notification">
+                <i class="fas fa-check-circle"></i>
+                <span>Адрес скопирован в буфер обмена!</span>
             </div>
         </div>
     </section>
@@ -330,7 +565,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2023 MedCalc. Учебный проект. Результаты расчетов носят справочный характер.</p>
+            <p>© 2025 MedCalc.</p>
         </div>
     </div>
 </footer>

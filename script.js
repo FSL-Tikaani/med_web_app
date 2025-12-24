@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('MedCalc - учебный проект медицинских калькуляторов загружен');
 
     // ====================
     // 1. НАВИГАЦИЯ ПО САЙТУ
@@ -504,6 +503,8 @@ document.addEventListener('DOMContentLoaded', function() {
         loadSavedBMIData();
         loadSavedHealthData();
         loadSavedMessages();
+        initContactPage();
+
 
         // Загружаем последнюю посещенную страницу
         const lastPage = localStorage.getItem('lastPage') || 'home';
@@ -601,4 +602,153 @@ document.addEventListener('DOMContentLoaded', function() {
 
         footer.appendChild(resetContainer);
     }
+
+    // Функции для страницы "Обратная связь"
+    function initContactPage() {
+        console.log('Инициализация страницы обратной связи');
+
+        // Инициализация кнопок копирования
+        initCopyButtons();
+
+        // Инициализация анимации карточек
+        animateContactCards();
+
+        // Добавляем обработчики для ссылок
+        initContactLinks();
+    }
+
+    // Функция для инициализации кнопок копирования
+    function initCopyButtons() {
+        const copyButtons = document.querySelectorAll('.btn-copy');
+
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const email = this.getAttribute('data-clipboard-text');
+
+                // Копируем email в буфер обмена
+                copyToClipboard(email);
+
+                // Показываем уведомление
+                showCopyNotification();
+
+                // Добавляем визуальную обратную связь
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                this.style.backgroundColor = '#4caf50';
+                this.style.color = 'white';
+
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                }, 2000);
+            });
+        });
+    }
+
+    // Функция копирования текста в буфер обмена
+    function copyToClipboard(text) {
+        // Создаем временный textarea элемент
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+
+        // Добавляем элемент на страницу
+        document.body.appendChild(textarea);
+
+        // Выделяем текст и копируем
+        textarea.select();
+        textarea.setSelectionRange(0, 99999); // Для мобильных устройств
+
+        try {
+            document.execCommand('copy');
+            console.log('Текст скопирован в буфер обмена: ' + text);
+        } catch (err) {
+            console.error('Ошибка при копировании: ', err);
+        }
+
+        // Удаляем временный элемент
+        document.body.removeChild(textarea);
+    }
+
+    // Функция показа уведомления о копировании
+    function showCopyNotification() {
+        const notification = document.getElementById('copy-notification');
+
+        if (!notification) return;
+
+        // Показываем уведомление
+        notification.classList.add('show');
+
+        // Скрываем через 3 секунды
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 3000);
+    }
+
+    // Функция анимации карточек контактов
+    function animateContactCards() {
+        const contactCards = document.querySelectorAll('.contact-card');
+
+        if (contactCards.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Инициализируем карточки с начальной анимацией
+            contactCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        }
+    }
+
+    // Функция инициализации ссылок контактов
+    function initContactLinks() {
+        // Добавляем обработчики для всех ссылок на странице контактов
+        const contactLinks = document.querySelectorAll('.contact-card a');
+
+        contactLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Для внешних ссылок добавляем атрибут target="_blank" если его нет
+                if (this.href && this.href.startsWith('http') && !this.getAttribute('target')) {
+                    this.setAttribute('target', '_blank');
+                    this.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        });
+    }
+
+    // Функция для определения, какая карточка контакта наиболее подходящая для вопроса
+    function suggestContact(category) {
+        const categories = {
+            'technical': 'Александр Иванов (Frontend-разработчик)',
+            'design': 'Мария Смирнова (UI/UX дизайнер)',
+            'medical': 'Дмитрий Петров (Медицинский консультант)',
+            'general': 'Екатерина Волкова (Менеджер проекта)'
+        };
+
+        return categories[category] || 'Екатерина Волкова (Менеджер проекта)';
+    }
+
+    // Функция для быстрого создания письма
+    function createEmail(to, subject, body) {
+        const emailLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = emailLink;
+    }
+
+// Добавьте вызов инициализации страницы контактов в основную функцию init()
+// Вставьте эту строку в функцию init() после загрузки всех данных:
+//
 });

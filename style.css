@@ -843,3 +843,915 @@ body {
         flex-direction: column;
     }
 }
+
+
+/* Стили для блока "Команда" */
+.team-photo-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.team-photo {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-light), var(--secondary-color));
+    padding: 60px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-photo i {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.team-photo p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.team-description {
+    max-width: 800px;
+    margin: 40px auto 60px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.team-member-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.member-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.member-name h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--primary-dark);
+}
+
+.member-position {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.member-responsibilities h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.member-responsibilities ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.member-responsibilities li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-light);
+}
+
+.member-responsibilities li:before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.member-skills span {
+    background-color: var(--gray-light);
+    color: var(--text-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Стилизация для разных ролей */
+.team-member-card:nth-child(1) {
+    border-top-color: #4caf50; /* Зеленый для разработчика */
+}
+
+.team-member-card:nth-child(1) .member-avatar {
+    background-color: #4caf50;
+}
+
+.team-member-card:nth-child(2) {
+    border-top-color: #2196f3; /* Синий для дизайнера */
+}
+
+.team-member-card:nth-child(2) .member-avatar {
+    background-color: #2196f3;
+}
+
+.team-member-card:nth-child(3) {
+    border-top-color: #ff9800; /* Оранжевый для медицинского консультанта */
+}
+
+.team-member-card:nth-child(3) .member-avatar {
+    background-color: #ff9800;
+}
+
+.team-member-card:nth-child(4) {
+    border-top-color: #9c27b0; /* Фиолетовый для менеджера */
+}
+
+.team-member-card:nth-child(4) .member-avatar {
+    background-color: #9c27b0;
+}
+
+/* Статистика команды */
+.team-footer {
+    margin-top: 80px;
+}
+
+.team-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+}
+
+.stat {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Адаптивность для блока команды */
+@media (max-width: 768px) {
+    .team-photo {
+        padding: 40px 20px;
+    }
+
+    .team-photo i {
+        font-size: 5rem;
+    }
+
+    .team-photo p {
+        font-size: 1.2rem;
+    }
+
+    .team-members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+    }
+
+    .stat {
+        padding: 15px 10px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+}
+
+/* Дополнительные стили для улучшения отображения карточек команды */
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.team-member-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+    flex-shrink: 0;
+}
+
+.member-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.member-name {
+    flex-grow: 1;
+}
+
+.member-name h4 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--primary-dark);
+    line-height: 1.4;
+}
+
+.member-responsibilities {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-responsibilities h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.member-responsibilities ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.member-responsibilities li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.member-responsibilities li:before {
+    content: "✓";
+    color: var(--primary-color);
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+/* Цвета для разных карточек - по одной на каждого члена команды */
+.team-member-card:nth-child(1) {
+    border-top-color: #4caf50; /* Усова - зеленый */
+}
+
+.team-member-card:nth-child(1) .member-avatar {
+    background-color: #4caf50;
+}
+
+.team-member-card:nth-child(2) {
+    border-top-color: #2196f3; /* Храмова - синий */
+}
+
+.team-member-card:nth-child(2) .member-avatar {
+    background-color: #2196f3;
+}
+
+.team-member-card:nth-child(3) {
+    border-top-color: #ff9800; /* Орлова - оранжевый */
+}
+
+.team-member-card:nth-child(3) .member-avatar {
+    background-color: #ff9800;
+}
+
+.team-member-card:nth-child(4) {
+    border-top-color: #9c27b0; /* Щенникова - фиолетовый */
+}
+
+.team-member-card:nth-child(4) .member-avatar {
+    background-color: #9c27b0;
+}
+
+.team-member-card:nth-child(5) {
+    border-top-color: #607d8b; /* Мельникова - сине-серый */
+}
+
+.team-member-card:nth-child(5) .member-avatar {
+    background-color: #607d8b;
+}
+
+/* Улучшение адаптивности */
+@media (max-width: 768px) {
+    .team-members-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-member-card {
+        padding: 20px;
+    }
+
+    .member-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .member-name h4 {
+        font-size: 1.1rem;
+    }
+
+    .member-responsibilities h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member-card {
+        padding: 15px;
+    }
+
+    .member-header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    .member-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Стили для страницы "Обратная связь" */
+.contact-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.contact-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.contact-person {
+    display: flex;
+    padding: 25px;
+    background: linear-gradient(to right, rgba(46, 125, 50, 0.05), rgba(255, 255, 255, 0));
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.contact-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 2rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.contact-card:nth-child(1) .contact-avatar {
+    background-color: #4caf50; /* Зеленый для разработчика */
+}
+
+.contact-card:nth-child(2) .contact-avatar {
+    background-color: #2196f3; /* Синий для дизайнера */
+}
+
+.contact-card:nth-child(3) .contact-avatar {
+    background-color: #ff9800; /* Оранжевый для медицинского консультанта */
+}
+
+.contact-card:nth-child(4) .contact-avatar {
+    background-color: #9c27b0; /* Фиолетовый для менеджера */
+}
+
+.contact-person-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--primary-dark);
+}
+
+.contact-role {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-bio {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.contact-methods {
+    padding: 25px;
+}
+
+.contact-methods h4 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.contact-method {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--gray-light);
+}
+
+.contact-method:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.method-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.contact-method:nth-child(1) .method-icon {
+    background-color: #d32f2f; /* Красный для email */
+}
+
+.contact-method:nth-child(2) .method-icon {
+    background-color: #4c75a3; /* Синий ВК */
+}
+
+.contact-method:nth-child(3) .method-icon {
+    background-color: #24a1dd; /* Голубой Telegram */
+}
+
+.method-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.method-link {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 8px;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.method-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.btn-copy, .btn-open {
+    background-color: var(--gray-light);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.btn-copy i, .btn-open i {
+    margin-right: 5px;
+}
+
+.btn-copy:hover {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.btn-open:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Блок с дополнительной информацией */
+.contact-note {
+    background-color: #e8f5e9;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    display: flex;
+    margin-top: 40px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.note-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.note-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.note-content p {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.note-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Уведомление о копировании */
+.copy-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.copy-notification i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Адаптивность для страницы обратной связи */
+@media (max-width: 992px) {
+    .contact-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-person {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contact-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-note {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .note-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .method-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        margin: 0 -10px;
+        border-radius: 0;
+    }
+
+    .contact-person, .contact-methods {
+        padding: 20px 15px;
+    }
+
+    .btn-copy, .btn-open {
+        width: 100%;
+        margin-bottom: 8px;
+        justify-content: center;
+    }
+}
+
+.method-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Исправления для иконок на странице "Обратная связь" */
+
+/* Исправляем иконку Telegram */
+.method-icon img {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Гарантируем одинаковый размер для всех иконок */
+.method-icon i,
+.method-icon img {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Исправляем выравнивание внутри contact-method */
+.contact-method {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--gray-light);
+}
+
+.contact-method:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Исправляем метод-инфо (удаляем лишние width/height) */
+.method-info {
+    flex-grow: 1;
+    /* УДАЛИТЕ эти строки если они есть: */
+    /* width: 20px; */
+    /* height: 20px; */
+    /* object-fit: contain; */
+}
+
+/* Улучшаем кнопки */
+.btn-copy, .btn-open {
+    margin-top: 5px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* Делаем иконки одинакового цвета */
+.contact-method:nth-child(3) .method-icon {
+    background-color: #24a1dd !important; /* Голубой для Telegram */
+}
+
+.contact-method:nth-child(3) .method-icon img {
+    filter: brightness(0) invert(1); /* Белая иконка на голубом фоне */
+}
+
+/* ==================== */
+/* ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ ИКОНОК */
+/* ==================== */
+
+/* Все контейнеры иконок одинакового размера (45px) */
+.method-icon {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Иконки Font Awesome (Email и VK) */
+.method-icon i {
+    font-size: 1.2rem !important;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Иконка Telegram (PNG) */
+.method-icon img {
+    width: 45px !important;  /* Увеличиваем иконку Telegram */
+    height: 45px !important;
+    object-fit: contain;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Цвета фона для иконок */
+.contact-method:nth-child(1) .method-icon {
+    background-color: #d32f2f; /* Красный для email */
+}
+
+.contact-method:nth-child(2) .method-icon {
+    background-color: #4c75a3; /* Синий для VK */
+}
+
+.contact-method:nth-child(3) .method-icon {
+    background-color: #24a1dd !important; /* Голубой для Telegram */
+}
+
+/* Проверка: добавим обводку для отладки */
+.method-icon {
+    /* border: 1px solid red; */ /* Можно раскомментировать для проверки */
+}
+
+/* Добавьте эти стили в ваш CSS файл */
+
+/* Обновленные стили для фотографии команды */
+.team-photo-container {
+    text-align: center;
+    margin: 40px 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.team-photo {
+    display: inline-block;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.team-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-photo:hover img {
+    transform: scale(1.03);
+}
+
+.team-photo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 85%, rgba(0,0,0,0.2));
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Адаптивность для фотографии команды */
+@media (max-width: 768px) {
+    .team-photo {
+        max-width: 95%;
+        border-radius: 10px;
+    }
+
+    .team-photo-container {
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-photo {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+}
